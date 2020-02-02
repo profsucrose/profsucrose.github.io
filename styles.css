@@ -35,3 +35,8 @@ footer {
     overflow: hidden;
     animation-fill-mode: forwards;
 }
+
+.avatar {
+    width: 100px;
+    border-radius: 10%;
+}
