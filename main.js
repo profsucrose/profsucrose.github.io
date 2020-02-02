@@ -1,4 +1,6 @@
-let repos
+console.log(`
+    %cThat's right Timothy, COmputers ARE cool!
+`, "color:green;font-size:30px;")
 fetch('https://cors-anywhere.herokuapp.com/https://github.com/profsucrose?tab=repositories')
     .then(raw => raw.text())
     .then(html => {
@@ -6,7 +8,6 @@ fetch('https://cors-anywhere.herokuapp.com/https://github.com/profsucrose?tab=re
         const repos = rawRepos.map(x => x.map(y => y.split('').filter(c => c !== '<' && c !== '>' && c !== '\n').join('').trim()).filter(x => x))
 
         repos.forEach((repo, index) => {
-            console.log(repo)
             const title = repo[0]
             const link = `https://github.com/profsucrose/${title}`
             const date = repo[repo.length - 1]
